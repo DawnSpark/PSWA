@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Мультиграф</title>
+<link href="tooplate_style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+</script>
+
+<link rel="stylesheet" type="text/css" href="css/jquery.lightbox-0.5.css" />    
+    
+
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/jquery.lightbox-0.5.js"></script>
+<link rel="stylesheet" type="text/css" href="css/jquery.lightbox-0.5.css" media="screen" />
+
+
+<script type="text/javascript">
+$(function() {
+    $('.lightbox').lightBox();
+});
+</script>
+
+</head>
+<body>
+
+
+<div id="tooplate_middle_wrapper">
+	<div id="tooplate_middle">
+	
+    	<h2>Граф</h2>
+        <p>це сукупність об'єктів із зв'язками між ними.
+		Об'єкти розглядаються як вершини, або вузли графу, а зв'язки — як дуги, або ребра.
+		Для різних областей використання види графів можуть відрізнятися орієнтовністю,
+		обмеженнями на кількість зв'язків і додатковими даними про вершини або ребра.</p>
+    
+    </div> 
+</div>
+
+<div id="tooplate_menu">
+    <ul>
+        <li><a href="index.html">Головна</a></li>
+        <li><a href="orient.html">Орієнтований граф</a></li>
+        <li><a href="multi.html" class = "current">Мультиграф</a></li>
+        <li><a href="tree.html">Дерево</a></li>
+    </ul>    	
+</div> 
+
+<div id="tooplate_main">
+	 <div class="col_w900 hr_divider">
+	 
+        <h2>Мультиграфи</h2>
+        <p>Мультиграф - називають граф, в якому допускається наявність кратних ребер (їх також називають «паралельними»), тобто є ребра, які мають одні й ті ж кінцеві вершини. Таким чином, дві вершини можуть бути з'єднані більш ніж одним ребром (цим мультиграфи відрізняються від гіперграфів, в яких кожне ребро може з'єднувати будь-яке число вершин, а не рівно дві).</p>
+    
+    </div>
+	
+    <div class="col_w900_last">
+        <div id="gallery">
+		
+   	  		<ul>
+            	<li>
+                	<a class="lightbox" href="images/gallery/image_01_l.jpg" title="Приклад комп'ютерн">
+                		<img src="images/gallery/image_01_s.jpg" alt="Image" />
+					</a>
+                    <span>Мережі</span>
+                    Мультиграфи можна використовувати для позначення комп'ютерних мереж
+  				</li>
+                <li>
+                	<a class="lightbox" href="images/gallery/image_02_l.jpg" title="Задача про Кенінгберзькі мости">
+                		<img src="images/gallery/image_02_s.jpg" alt="Image" />
+					</a>
+                    <span> Архітектура</span>
+				        Мультиграфи можна використовувати для позначення доріг та мостів
+			  	</li>
+	      		<li class="lmb">
+					
+						<a class="lightbox" href="images/gallery/image_03_l.jpg" title="Алгоритм Дейкстри">
+							<img src="images/gallery/image_03_s.jpg" alt="Image" />
+						</a>
+					<span>Алгоритми</span>
+					 Мультиграфи використовують для розв'язання алгоритмічно важких задач.
+				</li>
+		 	</ul> 
+		   
+         	<div class="cleaner"></div>
+    	</div
+    </div>
+</div>
+
+</body>
+</html>
