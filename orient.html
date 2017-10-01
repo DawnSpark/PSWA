@@ -10,7 +10,7 @@
 <body>
 
 
-<div id="tooplate_middle_wrapper">
+<div id="tooplate_middle_wrapper" class = "GeneralInfo">
 	<div id="tooplate_middle">
 	
     	<h2>Граф</h2>
@@ -28,6 +28,7 @@
         <li><a href="orient.html" class = "current">Орієнтований граф</a></li>
         <li><a href="multi.html">Мультиграф</a></li>
         <li><a href="tree.html">Дерево</a></li>
+		<li><a href="js.html">JS</a></li>
     </ul>    	
 </div> 
 
@@ -35,7 +36,7 @@
     <div class="col_w900 hr_divider">
             
         <div class="col_w420 lp_box float_l">
-            <h2>Орієнтований граф</h2>
+            <h2 class = "PageInfo">Орієнтований граф</h2>
             <img class="image_wrapper image_fl" src="images/tooplate_image_01.jpg" alt="Image 01" />
           	<p>Орієнтований граф (коротко орграф) — (мульти) граф, ребрам якого присвоєно напрямок. Орієнтовані ребра називаються також дугами, а в деяких джерелах (Оре) і просто ребрами.</p>
 		   	<p>Орграф широко застосовуються в програмуванні як спосіб опису систем зі складними зв'язками. Наприклад, одна з основних структур, що використовуються при розробці компіляторів і взагалі для подання комп'ютерних програм — граф потоків даних.</p>
@@ -43,7 +44,7 @@
         
         <div class="col_w420 float_r">
 		
-            <h2> Основні поняття</h2>
+            <h2 class = "PageInfo"> Основні поняття</h2>
              <ul class="tooplate_list">
 				<li>Інциддентна дуга</li>
 				<li>Початкова вершина дуги</li>
@@ -56,8 +57,18 @@
 			
         </div>
         <div class="cleaner"></div>
-		
+		<p class = "PageInfo" id = 'timer' onload = 'MyFunction();'>Hello World!</p>
+		<script type="text/javascript">
+			function MyFunction(){
+			document.getElementById('timer').innerHTML = Date();
+			setInterval(MyFunction,1000);
+		}
+		MyFunction();
+		</script>
     </div>
 </div>
+
+
+
 </body>
 </html>

@@ -26,7 +26,7 @@ $(function() {
 
 
 <div id="tooplate_middle_wrapper">
-	<div id="tooplate_middle">
+	<div id="tooplate_middle" class = "GeneralInfo">
 	
     	<h2>Граф</h2>
         <p>це сукупність об'єктів із зв'язками між ними.
@@ -43,13 +43,14 @@ $(function() {
         <li><a href="orient.html">Орієнтований граф</a></li>
         <li><a href="multi.html" class = "current">Мультиграф</a></li>
         <li><a href="tree.html">Дерево</a></li>
+		<li><a href="js.html">JS</a></li>
     </ul>    	
 </div> 
 
 <div id="tooplate_main">
 	 <div class="col_w900 hr_divider">
 	 
-        <h2>Мультиграфи</h2>
+        <h2 class = "PageInfo">Мультиграфи</h2>
         <p>Мультиграф - називають граф, в якому допускається наявність кратних ребер (їх також називають «паралельними»), тобто є ребра, які мають одні й ті ж кінцеві вершини. Таким чином, дві вершини можуть бути з'єднані більш ніж одним ребром (цим мультиграфи відрізняються від гіперграфів, в яких кожне ребро може з'єднувати будь-яке число вершин, а не рівно дві).</p>
     
     </div>
@@ -83,7 +84,15 @@ $(function() {
 		 	</ul> 
 		   
          	<div class="cleaner"></div>
-    	</div
+			<p class = "PageInfo" id = 'timer' onload = 'MyFunction();'>Hello World!</p>
+		<script type="text/javascript">
+			function MyFunction(){
+			document.getElementById('timer').innerHTML = Date();
+			setInterval(MyFunction,1000);
+		}
+		MyFunction();
+		</script>
+    	</div>
     </div>
 </div>
 

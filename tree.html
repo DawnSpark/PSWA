@@ -11,7 +11,7 @@
 
 
 
-<div id="tooplate_middle_wrapper">
+<div id="tooplate_middle_wrapper" class = "GeneralInfo">
 	<div id="tooplate_middle">
 	
 	
@@ -28,7 +28,8 @@
         <li><a href="index.html">Головна</a></li>
         <li><a href="orient.html">Орієнтований граф</a></li>
         <li><a href="multi.html">Мультиграф</a></li>
-        <li><a href="tree.html">Дерево</a></li>
+        <li><a href="tree.html" class = "current">Дерево</a></li>
+		<li><a href="js.html">JS</a></li>
     </ul>    	
 </div> 
 
@@ -38,7 +39,7 @@
           	<div class="post_box">
 			
             	<div class="col_w580 float_l">
-                  	<h2>Дерево</h2>                
+                  	<h2 class = "PageInfo">Дерево</h2>                
 				</div>
 				
               	<img src="images/blog_image_01.jpg" alt="Image" />
@@ -58,7 +59,7 @@
         
         <div class="col_w280 float_r">
         	<div class="sb_box">
-            	 <h2>Пов'язані визначення</h2>
+            	 <h2 class = "PageInfo">Пов'язані визначення</h2>
                     <ul class="tooplate_list">
                         <li>Ступінь вершини</li>
                         <li>Кінцевий вузол</li>
@@ -69,12 +70,19 @@
                         <li>Ліс</li>
                     </ul>    
             </div>
-        
-        
-        
         </div>
          
         <div class="cleaner"></div>
+		
+		<p class = "PageInfo" id = 'timer' onload = 'MyFunction();'>Hello World!</p>
+		<script type="text/javascript">
+			function MyFunction(){
+			document.getElementById('timer').innerHTML = Date();
+			setInterval(MyFunction,1000);
+		}
+		MyFunction();
+		</script>
     </div>
+	
 </body>
 </html>

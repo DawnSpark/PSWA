@@ -1,0 +1,183 @@
+﻿<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>JS</title>
+<link href="tooplate_style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+</script>
+
+</head>
+<body>
+
+<div id="tooplate_middle_wrapper" class = "GeneralInfo">
+	<div id="tooplate_middle">
+	
+	
+    	<h2>JS зразок</h2>
+        <p>Імплементація JS у html документі</p>
+ </div> 
+ </div>
+
+<div id="tooplate_menu">
+    <ul>
+        <li><a href="index.html">Головна</a></li>
+        <li><a href="orient.html">Орієнтований граф</a></li>
+        <li><a href="multi.html">Мультиграф</a></li>
+        <li><a href="tree.html">Дерево</a></li>
+		<li><a href="db.html" class = "current">JS</a></li>
+    </ul>    	
+</div> 
+
+<div id="tooplate_main" style = "background-color:#DDDDDD">
+
+<script>
+var elements = {
+coin : "Flip a coin!",
+clock : "What time is it?",
+equation : "Solve quadratic equation!"
+};
+
+function changeField(select)
+{
+	var selected = select.options[select.selectedIndex];
+	//alert(selected.innerHTML);
+	document.getElementById("namer").innerHTML = elements[selected.value];
+	switch (selected.innerHTML){
+	case "Flip a coin!":
+		var toShow = document.getElementsByClassName("coinGame");
+		for (var i = 0; i < toShow.length; i++){
+		toShow[i].style.display = 'block';
+		}
+		
+		document.getElementById('timer').style.display = "none";
+		
+		var toHide2 = document.getElementsByClassName("equation");
+	  for (var i = 0; i < toHide2.length; i++) {
+        toHide2[i].style.display = "none";
+    	}
+		/////////////////////////////////////////////////////////////////////
+		break;
+	case "What time is it?":
+	
+	 var toHide1 = document.getElementsByClassName("coinGame");
+	  for (var i = 0; i < toHide1.length; i++) {
+        toHide1[i].style.display = "none";
+    	}
+		
+		document.getElementById('timer').innerHTML = Date();
+		
+		 var toHide2 = document.getElementsByClassName("equation");
+	  for (var i = 0; i < toHide2.length; i++) {
+        toHide2[i].style.display = "none";
+    	}
+	
+		
+		document.getElementById('timer').style.display = "block";
+		
+		/////////////////////////////////////////////////////////////////////
+		
+		break;
+	case "Solve quadratic equation!":
+	 var toHide1 = document.getElementsByClassName("coinGame");
+	  for (var i = 0; i < toHide1.length; i++) {
+        toHide1[i].style.display = "none";
+    	}
+		document.getElementById('timer').style.display = "none";
+		
+		var toShow = document.getElementsByClassName("equation");
+		for (var i = 0; i < toShow.length; i++){
+		toShow[i].style.display = 'inline';
+		}
+		break;
+	default : 
+		alert("Error occured!");
+	}
+}
+function Solve(){
+var a = document.getElementById("AE").value;
+var b = document.getElementById("BE").value;
+var c = document.getElementById("CE").value;
+
+document.getElementById('root1').style.display = 'block';
+document.getElementById('root1_label').style.display = 'block';
+document.getElementById('root2').style.display = 'block';
+document.getElementById('root2_label').style.display = 'block';
+
+var disc = b*b - 4 * a * c;
+
+if (disc < 0){
+alert("Disc < 0! Roots don't exist!");
+document.getElementById('root1').style.display = 'none';
+document.getElementById('root1_label').style.display = 'none';
+document.getElementById('root2').style.display = 'none';
+document.getElementById('root2_label').style.display = 'none';
+}
+else if (disc == 0){
+document.getElementById('root1').innerHTML = -b/(2*a);
+document.getElementById('root2').style.display = 'none';
+document.getElementById('root2_label').style.display = 'none';
+}
+else{
+document.getElementById('root1').innerHTML = (-b - Math.sqrt(disc))/(2*a);
+document.getElementById('root2').innerHTML = (-b + Math.sqrt(disc))/(2*a);
+}
+}
+</script>
+<select id = "selectBox" onchange="changeField(this);">
+<option value = "coin">Flip a coin!</option>
+<option value = "clock">What time is it?</option>
+<option value = "equation">Solve quadratic equation!</option>
+</select>
+<div id="Field">
+
+       <h3 id = "namer" class='PageInfo' style="color:#000000; text-align:center;">FLIP A COIN!</h3>
+<script>
+function CoinFlipper(){
+var flipResult = Math.floor((Math.random() * 2) + 1);
+if (flipResult == 2)
+{
+	 document.getElementById("messenger").innerHTML="Tail Dropped!";
+	 document.getElementById("tails_counter").innerHTML++;
+	  document.getElementById("coin").src="images/coin_tail.jpg";
+}
+else
+{
+document.getElementById("messenger").innerHTML="Head Dropped!";
+	 document.getElementById("heads_counter").innerHTML++;
+	 document.getElementById("coin").src="images/coin_head.jpg";
+}
+//document.getElementById('chance').innerHTML= document.getElementById("heads_counter").innerHTML/(document.getElementById("heads_counter").innerHTML+document.getElementById("tails_counter").innerHTML);
+}
+</script>
+<p id="timer" class ="PageInfo" style="display:none; color:#000000"></p>
+<div class="equation" style="display:none; color:#000000">
+<input id = 'AE'></input>
+<p> * x^2 + </p>
+<input id ='BE'></input>
+<p> * x + </p>
+<input id ='CE'></input>
+<p> = 0</p>
+<button id ='eqSolver' onclick = "Solve()">Solve this!</button>
+<p id = 'root1_label'>root-1: </p>
+<p id = 'root1'></p>
+<p id = 'root2_label'> root-2: </p>
+<p id = 'root2'></p>
+</div>
+<div class ='coinGame' style= "color:#000000">
+<img class = "image_wrapper" id="coin" src="images/coin_head.jpg" style = "display: block; margin: auto; width: 40%;"></img>
+<button id ='flipButton'  style="text-align:right, position:absolute; " onclick="CoinFlipper();">Throw Coin!</button>
+<ul>
+<p id = 'heads_label' >Heads Dropped: </p>
+<p id='heads_counter' >0</p>
+<p id='tails_label'>Tails Dropped: </p>
+<p id='tails_counter' >0</p>
+<p id='messenger' style="color:#FE2E2E;">NICE!</p>
+</ul>
+</div>
+    </div>
+	
+	<!-- -------------------------------------------------------------------------------------->
+	<div style="background-color:#DDDDDD; display: flex;  align-items: center;  justify-content: center; color:#000000;">
+</div>
+</body>
+</html>
